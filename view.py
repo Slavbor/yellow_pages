@@ -23,7 +23,7 @@ def main_menu() -> int:
 def num_to_find():
     while True:
         num_find = input(txt.contact_change)
-        if num_find.isdigit() and 0 < int(num_find) <= len(module.start_phone_book):
+        if num_find.isdigit() and 0 < int(num_find) <= len(module.phone_book):
             return int(num_find) - 1
         else:
             print()
@@ -60,7 +60,7 @@ def new_contact() -> dict:
 def chose_to_del():
     while True:
         num_to_del = input(txt.choice_to_delete)
-        if num_to_del.isdigit() and 0 < int(num_to_del) <= len(module.start_phone_book):
+        if num_to_del.isdigit() and 0 < int(num_to_del) <= len(module.phone_book):
             return int(num_to_del) - 1
         else:
             print()
