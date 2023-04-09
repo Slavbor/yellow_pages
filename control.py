@@ -2,7 +2,6 @@ import view
 import module
 import text_fields
 
-
 def start_pb():
     module.load_file()
     view.print_info(text_fields.load_successful)
@@ -23,6 +22,7 @@ def start_pb():
                 view.print_info(text_fields.new_contact_successful)
 
             case 4:
+                print()
                 contact_to_find = input(text_fields.find_contact)
                 module.find_contact(contact_to_find)
 

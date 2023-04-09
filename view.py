@@ -19,6 +19,7 @@ def main_menu() -> int:
             print('Введено неправильное значение(введите число от 1 до 8)')
 
 
+
 def print_info(message: str):
     print('\n' + '=' * len(message))
     print(message)

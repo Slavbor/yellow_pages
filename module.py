@@ -54,6 +54,7 @@ def find_contact(contact_to_find):
             view.print_info(text_fields.no_info_input)
 
 
+
 def change_contact(num):
     new_name = input(text_fields.namechang)
     new_phone = input(text_fields.phonechang)
