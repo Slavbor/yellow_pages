@@ -58,8 +58,13 @@ def new_contact() -> dict:
 
 
 def chose_to_del():
-    num_to_del = int(input(txt.choice_to_delete)) - 1
-    return num_to_del
+    while True:
+        num_to_del = input(txt.choice_to_delete)
+        if num_to_del.isdigit() and 0 < int(num_to_del) <= len(module.start_phone_book):
+            return int(num_to_del) - 1
+        else:
+            print()
+            print(txt.notnumber)
 
 
 def confirm_func(message: str) -> bool:

@@ -40,8 +40,10 @@ def start_pb():
             case 6:
                 pb = module.get_pb()
                 view.show_contacts(pb, text_fields.no_contact_or_file)
+
                 num_to_del = view.chose_to_del()
                 module.delete_contact(num_to_del)
+
                 view.print_info(text_fields.delete_done)
 
             case 7:
