@@ -20,7 +20,6 @@ def load_file():
     start_phone_book = phone_book.copy()
 
 
-
 def save_file():
     data = []
     for contact in phone_book:
@@ -39,16 +38,20 @@ def find_contact(contact_to_find):
     find_list = []
     with open(PATH, 'r', encoding='utf-8') as file:
         content = file.readlines()
-        for k in range(len(content)):
-            for elem in content[k].lower().strip().split(';'):
-                if contact_to_find.lower() in elem:
-                    index_list.append(k)
-        for j in range(len(index_list)):
-            find_list.append(content[index_list[j]].replace(";", ",    "))
-        if len(find_list) == 0:
-            view.print_info(text_fields.no_contact)
+        if contact_to_find != "":
+            for k in range(len(content)):
+                for elem in content[k].lower().strip().split(';'):
+                    if contact_to_find.lower() in elem:
+                        index_list.append(k)
+            for j in range(len(index_list)):
+                find_list.append(content[index_list[j]].replace(";", ",    "))
+            if len(find_list) == 0:
+                view.print_info(text_fields.no_contact)
+            else:
+                print()
+                print(*find_list)
         else:
-            print(*find_list)
+            view.print_info(text_fields.no_info_input)
 
 
 def change_contact(num):
@@ -61,7 +64,6 @@ def change_contact(num):
         phone_book[num]['phone'] = new_phone
     if new_comment != '':
         phone_book[num]['comment'] = new_comment
-
 
 
 def delete_contact(num_to_del):
