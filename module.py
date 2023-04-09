@@ -66,7 +66,6 @@ def change_contact(num):
         phone_book[num]['comment'] = new_comment
 
 
-
 def delete_contact(num_to_del):
     del phone_book[num_to_del]
 
