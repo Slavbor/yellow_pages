@@ -1,3 +1,4 @@
+import module
 import text_fields as txt
 
 
@@ -18,6 +19,15 @@ def main_menu() -> int:
         else:
             print('Введено неправильное значение(введите число от 1 до 8)')
 
+
+def num_to_find():
+    while True:
+        num_find = input(txt.contact_change)
+        if num_find.isdigit() and 0 < int(num_find) <= len(module.start_phone_book):
+            return int(num_find) - 1
+        else:
+            print()
+            print(txt.notnumber)
 
 
 def print_info(message: str):
@@ -45,7 +55,6 @@ def new_contact() -> dict:
     comment = input(txt.new_comment)
     print()
     return {'name': name, 'phone': phone, 'comment': comment}
-
 
 
 def chose_to_del():

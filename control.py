@@ -2,6 +2,7 @@ import view
 import module
 import text_fields
 
+
 def start_pb():
     module.load_file()
     view.print_info(text_fields.load_successful)
@@ -29,8 +30,10 @@ def start_pb():
             case 5:
                 pb = module.get_pb()
                 view.show_contacts(pb, text_fields.no_contact_or_file)
-                num_to_change = int(input(text_fields.contact_change))-1
+
+                num_to_change = view.num_to_find()
                 module.change_contact(num_to_change)
+
                 module.save_file()
                 view.print_info(text_fields.save_successful)
 
